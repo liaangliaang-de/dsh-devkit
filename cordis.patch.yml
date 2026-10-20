@@ -1,0 +1,5 @@
+- insert:
+    - id: dsh-devkit
+      name: dsh-devkit
+      config:
+        enabled: true

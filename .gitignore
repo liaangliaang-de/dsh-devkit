@@ -1,0 +1,16 @@
+node_modules/
+.test-output/
+.test-state/
+dist/
+*.tgz
+*.zip
+*.log
+.env
+.env.*
+!.env.example
+.credentials*
+credentials.*
+*.pem
+*.key
+.DS_Store
+Thumbs.db

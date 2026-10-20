@@ -1,0 +1,16 @@
+{
+  "algorithm": "SHA256",
+  "normalization": "UTF-8, LF line endings, one final newline",
+  "files": {
+    "browser-helper.js": "d5fe2ce51786b1c2deeeef816fd074026c427d5008c85e5f8fa693a8ef39f1b9",
+    "core.js": "9ebf2b2cd8f8f347f7caf8236ee99e8c0ef4b48726045c752467a4e1bdc9969f",
+    "intent.js": "620e4f92e95de8cc53a6c9b53432cac21f9febf7f90218eefe53cbf1e98c423b",
+    "local-app-engine.js": "91ff18730f1546e3ca8838c40262673e8f6da325fbff2b9561d0b7e757acff79",
+    "materials.js": "02102346d3eb2f9d88ee8940dafc14a9c1107ec4aa175dc11c41ec855d6bc00f",
+    "plugin.js": "77bebdf00a355ef370434e0e71a18716cabf93bf1243474ae3ce95a5fc6feff9",
+    "scaffold.js": "8524d819f23d95187dadb5c60e2a2830cafae3e0cea6ae50ef5218c86e4fb5d1",
+    "smoke.js": "df0a95f5604512271f8818fe7a492b96bc5aa88123ab9f0fb8d3265fc6673505",
+    "usage.js": "68081af0e3b304cc3f2f5dd41addc266bda9fe5218d04821b1b34aafd57d937b",
+    "workflow.js": "ab2e0ec700f52dea62addc1175087242729857d518d8c1e5052155ec06a2a5c0"
+  }
+}

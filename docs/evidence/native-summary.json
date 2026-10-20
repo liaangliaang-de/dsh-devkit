@@ -1,0 +1,1242 @@
+{
+  "version": "0.2.6",
+  "host": "0.2.1-rc.1",
+  "scope": "Historical native tools; no model inference. Curated public projection of local reports, not raw replay artifacts.",
+  "runs": [
+    {
+      "id": "B-browser-full",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:49:41.270Z",
+      "finishedAt": "2026-10-20T03:49:55.038Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:41.349Z",
+          "durationMs": 3
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:41.352Z",
+          "durationMs": 31
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:41.383Z",
+          "durationMs": 685
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.068Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.072Z",
+          "durationMs": 7
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.079Z",
+          "durationMs": 22
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.101Z",
+          "durationMs": 662
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.763Z",
+          "durationMs": 9
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.772Z",
+          "durationMs": 4
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.776Z",
+          "durationMs": 5
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.781Z",
+          "durationMs": 2
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:42.783Z",
+          "durationMs": 437
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:43.220Z",
+          "durationMs": 24
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:43.244Z",
+          "durationMs": 1314
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:44.558Z",
+          "durationMs": 349
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:44.907Z",
+          "durationMs": 720
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:45.627Z",
+          "durationMs": 8
+        },
+        {
+          "id": "native-generator-auto-verification-and-feedback",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:45.635Z",
+          "durationMs": 6263
+        },
+        {
+          "id": "native-browser-assertion-and-download-content",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:51.898Z",
+          "durationMs": 3140
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "status": "FAIL",
+      "startedAt": "2026-10-20T03:55:56.149Z",
+      "finishedAt": "2026-10-20T03:56:01.888Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:56.258Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:56.262Z",
+          "durationMs": 43
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:56.305Z",
+          "durationMs": 811
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.116Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.120Z",
+          "durationMs": 6
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.126Z",
+          "durationMs": 28
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.154Z",
+          "durationMs": 657
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.811Z",
+          "durationMs": 11
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.822Z",
+          "durationMs": 4
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.826Z",
+          "durationMs": 5
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.831Z",
+          "durationMs": 1
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:57.832Z",
+          "durationMs": 455
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:58.287Z",
+          "durationMs": 29
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:58.316Z",
+          "durationMs": 1358
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:55:59.674Z",
+          "durationMs": 350
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:56:00.024Z",
+          "durationMs": 780
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:56:00.804Z",
+          "durationMs": 10
+        },
+        {
+          "id": "native-browser-assertion-and-download-content",
+          "status": "FAIL",
+          "startedAt": "2026-10-20T03:56:00.814Z",
+          "durationMs": 1074
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:49:57.750Z",
+      "finishedAt": "2026-10-20T03:50:02.399Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:57.861Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:57.865Z",
+          "durationMs": 35
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:57.900Z",
+          "durationMs": 740
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:58.640Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:58.644Z",
+          "durationMs": 9
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:58.653Z",
+          "durationMs": 26
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:58.679Z",
+          "durationMs": 653
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.332Z",
+          "durationMs": 9
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.341Z",
+          "durationMs": 5
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.346Z",
+          "durationMs": 5
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.351Z",
+          "durationMs": 3
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.354Z",
+          "durationMs": 453
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.807Z",
+          "durationMs": 26
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:49:59.833Z",
+          "durationMs": 1387
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:01.220Z",
+          "durationMs": 355
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:01.575Z",
+          "durationMs": 809
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:02.384Z",
+          "durationMs": 15
+        }
+      ]
+    },
+    {
+      "id": "CD",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:50:19.471Z",
+      "finishedAt": "2026-10-20T03:50:24.159Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:19.585Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:19.589Z",
+          "durationMs": 42
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:19.631Z",
+          "durationMs": 791
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:20.422Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:20.426Z",
+          "durationMs": 8
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:20.434Z",
+          "durationMs": 32
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:20.466Z",
+          "durationMs": 661
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.127Z",
+          "durationMs": 12
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.139Z",
+          "durationMs": 5
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.144Z",
+          "durationMs": 5
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.149Z",
+          "durationMs": 2
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.151Z",
+          "durationMs": 464
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.615Z",
+          "durationMs": 24
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:21.639Z",
+          "durationMs": 1382
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:23.021Z",
+          "durationMs": 352
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:23.373Z",
+          "durationMs": 777
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:24.150Z",
+          "durationMs": 9
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:50:04.988Z",
+      "finishedAt": "2026-10-20T03:50:09.615Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.075Z",
+          "durationMs": 3
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.078Z",
+          "durationMs": 34
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.112Z",
+          "durationMs": 758
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.870Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.874Z",
+          "durationMs": 6
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.880Z",
+          "durationMs": 29
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:05.909Z",
+          "durationMs": 654
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:06.563Z",
+          "durationMs": 12
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:06.575Z",
+          "durationMs": 4
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:06.579Z",
+          "durationMs": 6
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:06.585Z",
+          "durationMs": 2
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:06.587Z",
+          "durationMs": 467
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:07.054Z",
+          "durationMs": 24
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:07.078Z",
+          "durationMs": 1403
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:08.481Z",
+          "durationMs": 352
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:08.833Z",
+          "durationMs": 773
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:09.606Z",
+          "durationMs": 8
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:50:12.201Z",
+      "finishedAt": "2026-10-20T03:50:16.791Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:12.284Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:12.288Z",
+          "durationMs": 33
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:12.321Z",
+          "durationMs": 714
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.035Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.039Z",
+          "durationMs": 6
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.045Z",
+          "durationMs": 23
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.068Z",
+          "durationMs": 661
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.729Z",
+          "durationMs": 10
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.739Z",
+          "durationMs": 4
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.743Z",
+          "durationMs": 6
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.749Z",
+          "durationMs": 3
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:13.752Z",
+          "durationMs": 462
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:14.214Z",
+          "durationMs": 29
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:14.243Z",
+          "durationMs": 1362
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:15.605Z",
+          "durationMs": 355
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:15.960Z",
+          "durationMs": 822
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:16.782Z",
+          "durationMs": 9
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:50:26.708Z",
+      "finishedAt": "2026-10-20T03:50:31.270Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:26.792Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:26.796Z",
+          "durationMs": 33
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:26.829Z",
+          "durationMs": 741
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:27.570Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:27.574Z",
+          "durationMs": 6
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:27.580Z",
+          "durationMs": 30
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:27.610Z",
+          "durationMs": 648
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.258Z",
+          "durationMs": 9
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.267Z",
+          "durationMs": 5
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.272Z",
+          "durationMs": 7
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.279Z",
+          "durationMs": 2
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.281Z",
+          "durationMs": 465
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.746Z",
+          "durationMs": 27
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:28.773Z",
+          "durationMs": 1364
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:30.137Z",
+          "durationMs": 352
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:30.489Z",
+          "durationMs": 773
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:31.262Z",
+          "durationMs": 8
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:50:33.975Z",
+      "finishedAt": "2026-10-20T03:50:38.627Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.118Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.122Z",
+          "durationMs": 29
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.151Z",
+          "durationMs": 748
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.899Z",
+          "durationMs": 3
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.902Z",
+          "durationMs": 6
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.909Z",
+          "durationMs": 27
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:34.936Z",
+          "durationMs": 652
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:35.588Z",
+          "durationMs": 11
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:35.599Z",
+          "durationMs": 4
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:35.603Z",
+          "durationMs": 5
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:35.608Z",
+          "durationMs": 2
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:35.610Z",
+          "durationMs": 455
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:36.065Z",
+          "durationMs": 27
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:36.092Z",
+          "durationMs": 1390
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:37.482Z",
+          "durationMs": 347
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:37.829Z",
+          "durationMs": 790
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:38.619Z",
+          "durationMs": 8
+        }
+      ]
+    },
+    {
+      "id": "H-web",
+      "status": "FAIL",
+      "startedAt": "2026-10-20T03:53:44.252Z",
+      "finishedAt": "2026-10-20T03:53:50.795Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:44.673Z",
+          "durationMs": 6
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:44.679Z",
+          "durationMs": 48
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:44.727Z",
+          "durationMs": 924
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:45.651Z",
+          "durationMs": 8
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:45.659Z",
+          "durationMs": 14
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:45.673Z",
+          "durationMs": 67
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:45.740Z",
+          "durationMs": 660
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.400Z",
+          "durationMs": 20
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.420Z",
+          "durationMs": 7
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.427Z",
+          "durationMs": 10
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.437Z",
+          "durationMs": 3
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.440Z",
+          "durationMs": 484
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.924Z",
+          "durationMs": 45
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:46.969Z",
+          "durationMs": 1415
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:48.384Z",
+          "durationMs": 364
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:48.748Z",
+          "durationMs": 880
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:53:49.628Z",
+          "durationMs": 11
+        },
+        {
+          "id": "native-browser-assertion-and-download-content",
+          "status": "FAIL",
+          "startedAt": "2026-10-20T03:53:49.639Z",
+          "durationMs": 1156
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "status": "PASS",
+      "startedAt": "2026-10-20T03:50:41.488Z",
+      "finishedAt": "2026-10-20T03:50:46.291Z",
+      "cases": [
+        {
+          "id": "native-unplanned-write-denied",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:41.678Z",
+          "durationMs": 4
+        },
+        {
+          "id": "native-contract-and-executor-receipt",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:41.682Z",
+          "durationMs": 34
+        },
+        {
+          "id": "native-verification-via-host-shell",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:41.716Z",
+          "durationMs": 775
+        },
+        {
+          "id": "external-edit-invalidates-evidence",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:42.491Z",
+          "durationMs": 4
+        },
+        {
+          "id": "external-edit-blocks-blind-overwrite",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:42.495Z",
+          "durationMs": 6
+        },
+        {
+          "id": "other-session-cannot-bypass-project-writer",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:42.501Z",
+          "durationMs": 34
+        },
+        {
+          "id": "native-cancel-reconciles-side-effects-without-progress",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:42.535Z",
+          "durationMs": 661
+        },
+        {
+          "id": "only-one-context-contribution",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.196Z",
+          "durationMs": 12
+        },
+        {
+          "id": "discussion-guard-monotonic",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.208Z",
+          "durationMs": 4
+        },
+        {
+          "id": "read-only-tool-remains-available",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.212Z",
+          "durationMs": 8
+        },
+        {
+          "id": "unknown-native-call-does-not-fake-success",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.220Z",
+          "durationMs": 2
+        },
+        {
+          "id": "disable-in-flight-and-reload-drains-native-action",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.222Z",
+          "durationMs": 445
+        },
+        {
+          "id": "duplicate-final-events-are-not-recharged",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.667Z",
+          "durationMs": 30
+        },
+        {
+          "id": "late-native-result-cannot-advance-new-requirement",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:43.697Z",
+          "durationMs": 1403
+        },
+        {
+          "id": "state-observation-does-not-schedule-model-work",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:45.100Z",
+          "durationMs": 362
+        },
+        {
+          "id": "native-material-query-and-span-edit",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:45.462Z",
+          "durationMs": 820
+        },
+        {
+          "id": "native-colloquial-feedback-and-checkpoint",
+          "status": "PASS",
+          "startedAt": "2026-10-20T03:50:46.282Z",
+          "durationMs": 9
+        }
+      ]
+    }
+  ],
+  "publicationSmoke": {
+    "status": "PASS",
+    "version": "0.2.6",
+    "layer": "real-host/native-tools; no model inference",
+    "startedAt": "2026-10-20T04:26:48.433Z",
+    "finishedAt": "2026-10-20T04:26:53.315Z",
+    "cases": [
+      {
+        "id": "native-unplanned-write-denied",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:48.538Z",
+        "durationMs": 5
+      },
+      {
+        "id": "native-contract-and-executor-receipt",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:48.543Z",
+        "durationMs": 36
+      },
+      {
+        "id": "native-verification-via-host-shell",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:48.579Z",
+        "durationMs": 879
+      },
+      {
+        "id": "external-edit-invalidates-evidence",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:49.458Z",
+        "durationMs": 5
+      },
+      {
+        "id": "external-edit-blocks-blind-overwrite",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:49.463Z",
+        "durationMs": 8
+      },
+      {
+        "id": "other-session-cannot-bypass-project-writer",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:49.471Z",
+        "durationMs": 31
+      },
+      {
+        "id": "native-cancel-reconciles-side-effects-without-progress",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:49.502Z",
+        "durationMs": 657
+      },
+      {
+        "id": "only-one-context-contribution",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.159Z",
+        "durationMs": 13
+      },
+      {
+        "id": "discussion-guard-monotonic",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.172Z",
+        "durationMs": 4
+      },
+      {
+        "id": "read-only-tool-remains-available",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.176Z",
+        "durationMs": 6
+      },
+      {
+        "id": "unknown-native-call-does-not-fake-success",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.182Z",
+        "durationMs": 2
+      },
+      {
+        "id": "disable-in-flight-and-reload-drains-native-action",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.184Z",
+        "durationMs": 462
+      },
+      {
+        "id": "duplicate-final-events-are-not-recharged",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.646Z",
+        "durationMs": 36
+      },
+      {
+        "id": "late-native-result-cannot-advance-new-requirement",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:50.682Z",
+        "durationMs": 1386
+      },
+      {
+        "id": "state-observation-does-not-schedule-model-work",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:52.068Z",
+        "durationMs": 353
+      },
+      {
+        "id": "native-material-query-and-span-edit",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:52.421Z",
+        "durationMs": 885
+      },
+      {
+        "id": "native-colloquial-feedback-and-checkpoint",
+        "status": "PASS",
+        "startedAt": "2026-10-20T04:26:53.306Z",
+        "durationMs": 9
+      }
+    ]
+  }
+}
