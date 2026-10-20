@@ -20,11 +20,11 @@ $env:DSH_TEST_HOME = Join-Path $env:TEMP 'dsh-devkit-test-home'
 $env:DSH_INSTALLATION = Join-Path $env:LOCALAPPDATA 'Programs/DeepSeek Harness'
 $env:DSH_HOME = $env:DSH_TEST_HOME
 # 使用本机DSH自带CLI，在专用sdk profile安装构建的tgz；具体CLI路径依安装目录。
-# dsh plugin --profile sdk add ./dsh-devkit-0.2.6.tgz --offline --ignore-scripts
+# dsh plugin --profile sdk add ./dsh-devkit-0.2.7.tgz --offline --ignore-scripts
 npm run test:native
 ```
 
-默认在新临时项目运行17项原生状态/编辑/事件检查，不执行浏览器或模型。显式 `npm run test:native -- --browser-full` 才在隔离目录使用danger-full-access并加入生成器和浏览器检查；浏览器仍以宿主真实回执判定。这不切换现用桌面profile权限。
+默认在新临时项目运行23项原生状态/编辑/事件检查，不执行浏览器或模型。显式 `npm run test:native -- --browser-full` 才在隔离目录使用danger-full-access并加入生成器和浏览器检查，共25项；浏览器仍以宿主真实回执判定。这不切换现用桌面profile权限。
 
 可选 `DSH_TEST_PROFILE` 指定专用测试profile。报告默认在仓库 `.test-output/`，包含临时目录和执行细节，不能直接公开。测试目录留下状态/证据供检查，不自动删除用户目录。
 

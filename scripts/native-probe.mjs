@@ -9,7 +9,13 @@ export async function apply(ctx,config) {
  const handles=[];let recordedController;
  try{
   const presets=ctx.get('agentPresets');const setup=presets?async(agentCtx)=>{await presets.mount(agentCtx,'standard');}:undefined;
-  const handle=await ctx.agents.create({sessionId:`native-${config.combo}-${Date.now()}`,meta:{cwd,...(presets?{agentPreset:'standard'}:{})},setup,agentOptions:{provider:'deepseek-account',model:'deepseek-flash'}});handles.push(handle);
+  // Do not inject devkit as a hard dependency: lifecycle cases intentionally unload it.
+  for(let n=0;n<100&&!ctx.get('devkit');n++)await new Promise(resolve=>setTimeout(resolve,20));
+  assert.ok(ctx.get('devkit'),'DevKit service did not mount before native probe');
+  const mainSession=`native-${config.combo}-${Date.now()}`;
+  // Reproduce an already-persisted 0.2.6 session: unknown messages must never activate on load.
+  ctx.get('devkit').controller.update(cwd,s=>{s.messages.push({id:'legacy-info',sessionId:mainSession,text:'他报错了吗',intent:'unknown',at:new Date().toISOString()});});
+  const handle=await ctx.agents.create({sessionId:mainSession,meta:{cwd,...(presets?{agentPreset:'standard'}:{})},setup,agentOptions:{provider:'deepseek-account',model:'deepseek-flash'}});handles.push(handle);
   const agent=handle.agent,session=String(agent.session.id),c=ctx.get('devkit').controller;
   recordedController=c;
   report.devkitVersion=ctx.get('devkit').version;
@@ -17,7 +23,31 @@ export async function apply(ctx,config) {
   report.tools=ctx.tools.schemas(agent).map(t=>t.name);
   const call=async(name,args,id)=>{const callId=id??`probe-${Date.now()}-${Math.random()}`,startedAt=new Date().toISOString();const result=await ctx.tools.execute({name,arguments:args,callId,agent,signal:new AbortController().signal});report.executions.push({name,args,callId,startedAt,finishedAt:new Date().toISOString(),isError:result.isError,error:result.error??null,artifact:c.store.artifact(result)});return result;};
   const run=async(id,fn)=>{const startedAt=new Date().toISOString(),start=Date.now(),firstExecution=report.executions.length;try{await fn();report.cases.push({id,status:'PASS',startedAt,durationMs:Date.now()-start,executions:[firstExecution,report.executions.length]});}catch(e){report.cases.push({id,status:'FAIL',error:e.message,startedAt,durationMs:Date.now()-start,executions:[firstExecution,report.executions.length]});}};
-  c.ingest(cwd,session,`${session}:input`,'写一个小工具');
+  let discoverySpan;
+  await run('legacy-unknown-session-is-not-auto-admitted',async()=>{
+   const r=await call('devkit_project',{action:'status'});assert.equal(r.isError,false,JSON.stringify(r));assert.equal(r.value.managed,false);assert.equal(c.read(cwd).requirementVersion,0);assert.equal(c.read(cwd).messages[0].intent,'unknown');
+  });
+  await run('unmanaged-discovery-status-and-context-are-read-only',async()=>{
+   for(const [i,text] of ['dsh-devkit装了个新插件你看看有什么用','他报错了吗'].entries())agent.inject({role:'user',id:`discovery-${i}`,source:{kind:'user'},content:[{type:'text',text}]});
+   fs.writeFileSync(path.join(cwd,'guide.ts'),'export function feature(){return "original";}');
+   const state=c.read(cwd),r=await call('devkit_project',{action:'status'});assert.equal(r.isError,false);assert.equal(r.value.managed,false);assert.match(r.value.guidance,/只读/);
+   const q=await call('devkit_context',{query:'feature',path:'guide.ts',maxCharacters:2200});assert.equal(q.isError,false,JSON.stringify(q));discoverySpan=q.value.snippets.find(s=>s.symbol==='feature');assert.ok(discoverySpan);
+   assert.equal((await call('devkit_context',{action:'checkpoint'})).isError,false);await call('devkit_project',{action:'status'});
+   assert.equal(c.read(cwd).requirementVersion,0);assert.equal(c.read(cwd).epoch,state.epoch);assert.equal(c.read(cwd).planSession,undefined);assert.equal(c.read(cwd).status,'unmanaged');
+  });
+  await run('unmanaged-mutation-tools-decline-without-activation-or-shell',async()=>{
+   for(const [name,args]of [
+    ['devkit_project',{action:'plan',goal:'invented',criteria:[{id:'x',description:'x',kind:'command'}]}],
+    ['devkit_patch',{ref:discoverySpan.ref,replacement:'changed'}],['devkit_create',{title:'invented',fields:[{name:'note',label:'note',type:'text'}]}],
+    ['devkit_verify',{command:'Set-Content should-not-exist.txt unexpected',criterionIds:['x']}],['devkit_browser',{action:'inspect',file:'index.html'}],['devkit_artifact',{id:'a'.repeat(64)}]]){
+    const r=await call(name,args);assert.equal(r.isError,false,JSON.stringify(r));assert.equal(r.value.requiresUserWorkMessage,true,JSON.stringify(r));
+   }
+   assert.equal(fs.existsSync(path.join(cwd,'should-not-exist.txt')),false);assert.equal(fs.existsSync(path.join(cwd,'index.html')),false);assert.equal(c.read(cwd).usage.tools,0);assert.equal(c.read(cwd).requirementVersion,0);
+  });
+  await run('natural-feature-request-admits-without-a-magic-verb',async()=>{
+   agent.inject({role:'user',id:`feature-${Date.now()}`,source:{kind:'user'},content:[{type:'text',text:'能不能加个导出功能'}]});
+   const r=await call('devkit_project',{action:'status'});assert.equal(r.value.managed,true);assert.equal(r.value.status,'needs-plan');assert.equal(r.value.version,1);
+  });
   await run('native-unplanned-write-denied',async()=>{const r=await call('write',{file_path:'app.js',content:'x'});assert.equal(r.isError,true);assert.equal(fs.existsSync(path.join(cwd,'app.js')),false);});
   await run('native-contract-and-executor-receipt',async()=>{
    const r=await call('devkit_project',{action:'plan',goal:'小工具',criteria:[{id:'run',description:'node exits successfully',kind:'command'}],scope:['app.js']});assert.equal(r.isError,false,JSON.stringify(r));
@@ -29,6 +59,9 @@ export async function apply(ctx,config) {
    const r=await call('devkit_verify',{command:'node app.js',criterionIds:['run'],timeoutMs:10000});assert.equal(r.isError,false,JSON.stringify(r));
    assert.equal(r.value.evidence.passed,true,JSON.stringify(r));
    const d=await call('devkit_project',{action:'deliver'});assert.equal(d.isError,false,JSON.stringify(d));assert.equal(d.value.feedback,'awaiting-user');
+  });
+  await run('pre-admission-source-reference-is-stale-after-a-real-work-request',async()=>{
+   const r=await call('devkit_patch',{ref:discoverySpan.ref,replacement:'export function feature(){return "changed";}'});assert.equal(r.isError,true);assert.match(r.error.message,/old requirement/);assert.match(fs.readFileSync(path.join(cwd,'guide.ts'),'utf8'),/original/);
   });
   await run('external-edit-invalidates-evidence',async()=>{
    fs.writeFileSync(path.join(cwd,'app.js'),'console.log("user-edit")');
@@ -98,6 +131,12 @@ export async function apply(ctx,config) {
    const check=await call('devkit_verify',{command:`node -e "import('./exports.mjs').then(m=>{if(m.exportCsv()!=='fixed')process.exit(1)})"`,criterionIds:['export']});assert.equal(check.value?.evidence.passed,true,JSON.stringify(check));
    const again=await call('devkit_context',{query:'exportCsv',maxCharacters:2200});assert.ok(again.value.stats.cacheHits>0);
    const patchOld=await call('devkit_patch',{ref:span.ref,replacement:'bad'});assert.equal(patchOld.isError,true);
+  });
+  await run('informational-question-pauses-active-modification-but-keeps-query-available',async()=>{
+   const version=c.read(cwd).requirementVersion;agent.inject({role:'user',id:`info-${Date.now()}`,source:{kind:'user'},content:[{type:'text',text:'他报错了吗'}]});
+   const status=await call('devkit_project',{action:'status'});assert.equal(status.isError,false);assert.equal(status.value.mode,'read-only');assert.equal(status.value.version,version);
+   assert.equal((await call('devkit_context',{query:'exportCsv'})).isError,false);
+   assert.equal((await call('write',{file_path:'question-write.txt',content:'must not write'})).isError,true);assert.equal(fs.existsSync(path.join(cwd,'question-write.txt')),false);
   });
   await run('native-colloquial-feedback-and-checkpoint',async()=>{
    const version=c.read(cwd).requirementVersion;agent.inject({role:'user',id:`colloquial-${Date.now()}`,source:{kind:'user'},content:[{type:'text',text:'这个页面太乱'}]});

@@ -1,6 +1,6 @@
 {
   "name": "dsh-devkit",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Single-entry wish coding: repository context, safe span edits, milestones and native browser verification",
   "type": "module",
   "license": "MIT",

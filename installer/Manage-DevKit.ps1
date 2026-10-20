@@ -30,9 +30,9 @@ foreach ($name in @('package.json','pnpm-lock.yaml','cordis.patch.yml','cordis.y
   if (Test-Path -LiteralPath $item) { Copy-Item -LiteralPath $item -Destination (Join-Path $backupRoot $name) }
 }
 if ($Action -eq 'Install') {
-  $packageFile = Join-Path $PSScriptRoot 'dsh-devkit-0.2.6.tgz'
+  $packageFile = Join-Path $PSScriptRoot 'dsh-devkit-0.2.7.tgz'
   $checksumFile = Join-Path $PSScriptRoot 'SHA256SUMS.txt'
-  $checksum = @(Get-Content -LiteralPath $checksumFile | Where-Object { $_ -match '^[a-fA-F0-9]{64}\s+\*?dsh-devkit-0\.2\.6\.tgz$' })
+  $checksum = @(Get-Content -LiteralPath $checksumFile | Where-Object { $_ -match '^[a-fA-F0-9]{64}\s+\*?dsh-devkit-0\.2\.7\.tgz$' })
   if ($checksum.Count -ne 1) { throw 'Package checksum entry is missing or ambiguous.' }
   $expected = ($checksum[0] -split '\s+')[0]
   if ((Get-FileHash -LiteralPath $packageFile -Algorithm SHA256).Hash -ne $expected) { throw 'Package checksum mismatch.' }
